@@ -1,0 +1,28 @@
+<ion-view view-title="{{command.name}}">
+  <ion-content>
+
+    <div class="list card">
+
+      <div class="item item-avatar">
+        <img src="img/command.png">
+        <h2>{{command.name}}</h2>
+        <p>{{command.currentTime | date:'medium'}}</p>
+      </div>
+
+      <div class="item item-body">
+
+        <p>
+          XX CHART SPACE xx
+        </p>
+        <p>
+          <a href="#" class="subdued">Requests: {{command.requestCount}}</a>
+          <a href="#" class="subdued assertive">Failure {{command.errorPercentage}} &#37;</a>
+          <a href="#" class="subdued assertive" ng-if="command.isCircuitBreakerOpen">Circuit Open</a>
+          <a href="#" class="subdued positive" ng-if="!command.isCircuitBreakerOpen">Circuit Closed</a>
+        </p>
+      </div>
+
+    </div>
+
+  </ion-content>
+</ion-view>
