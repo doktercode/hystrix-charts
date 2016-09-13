@@ -1,9 +1,20 @@
-<ion-view view-title="Playlists">
+<ion-view view-title="&gt; hystrix-charts">
   <ion-content>
-    <ion-list>
-      <ion-item ng-repeat="playlist in playlists" href="#/app/playlists/{{playlist.id}}">
-        {{playlist.title}}
-      </ion-item>
-    </ion-list>
+    <div>
+              <div class="padding">
+                <br/>
+                <center><h1 style="color:#212121;margin-top:20px">&gt; hystrix-charts</h1></center>
+                <img src="img/hystrix-logo.png" style="width:100%;"/>
+                <br/>
+                <label class="item item-input item-stacked-label">
+                  <span class="input-label">Hystrix Stream</span>
+                  <input type="text" ng-model="stream"/>
+                </label>
+                  <button ng-click="retrieveData()" class="button button-block button-dark button-clear"
+                    style="font-size:15pt">
+                      Retrieve Data
+                  </button>
+              </div>
+          </div>
   </ion-content>
 </ion-view>

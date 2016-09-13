@@ -11,9 +11,11 @@
 
       <div class="item item-body">
 
-        <p>
-          XX CHART SPACE xx
-        </p>
+        <p><canvas id="line" class="chart chart-line" chart-data="chartData"
+            chart-labels="labels" chart-series="series" chart-options="options"
+              chart-dataset-override="datasetOverride"
+        </canvas>
+       </p>
         <p>
           <a href="#" class="subdued">Requests: {{command.requestCount}}</a>
           <a href="#" class="subdued assertive">Failure {{command.errorPercentage}} &#37;</a>
