@@ -18,6 +18,9 @@
     </ion-header-bar>
     <ion-content>
       <ion-list>
+        <ion-item menu-close href="#/app/home">
+        <i class="icon ion-ios-home"></i>&nbsp;Home
+        </ion-item>
         <ion-item menu-close ng-repeat="command in commands" href="#/app/command/{{command}}">
         <i class="icon ion-ios-pulse-strong"></i>&nbsp;{{command}}
         </ion-item>

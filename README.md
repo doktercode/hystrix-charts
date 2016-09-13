@@ -1,7 +1,7 @@
 # hystrix-charts
 An Ionic Mobile Dashboard for Hystrix Streams
 
-#####Project Keywords: `Ionic Framework` `AngularJS` `Hystrix` `ChartJS`
+#####Project Keywords: `Ionic Framework` `AngularJS` `Hystrix` `ChartJS` `RxJS`
 
 ## Project Setup
 

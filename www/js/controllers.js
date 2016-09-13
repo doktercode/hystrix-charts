@@ -29,15 +29,22 @@ angular.module('hystrix-charts.controllers', [])
             });
         }
 
-        $scope.retrieveData = function(){
+        $scope.retrieveData = function(stream){
           $scope.home = true;
-          var source = new EventSource($scope.stream);
-          source.addEventListener('message', handleCallback, false);
+          $rootScope.data = {};
+          $scope.commands = [];
+          $rootScope.all = [];
+          $rootScope.command = {};
+          $scope.source = undefined;
+          $scope.source = new EventSource(stream);
+          $scope.source.addEventListener('message', handleCallback, false);
         };
+
+
 
 })
 
-.controller('CommandCtrl', function($scope, $rootScope, $stateParams) {
+.controller('CommandCtrl', function($scope, $rootScope, $stateParams, observeOnScope) {
 
     $scope.labels = ["0", "25", "50", "75", "90", "95", "99", "99.5", "100"];
     $scope.series = ['Latency Execute', 'Latency Total'];
@@ -50,22 +57,30 @@ angular.module('hystrix-charts.controllers', [])
      };
 
     $scope.showCommand = function(){
+        console.log("command",$stateParams.commandId);
         $rootScope.command = $rootScope.data[$stateParams.commandId];
+        $scope.refreshChart($rootScope.command);
+    };
 
-        if($rootScope.command){
-          $scope.chartData = [[$rootScope.command.latencyExecute["0"], $rootScope.command.latencyExecute["25"],
-          $rootScope.command.latencyExecute["50"], $rootScope.command.latencyExecute["75"],
-          $rootScope.command.latencyExecute["90"], $rootScope.command.latencyExecute["95"],
-          $rootScope.command.latencyExecute["99"], $rootScope.command.latencyExecute["99.5"],
-          $rootScope.command.latencyExecute["100"]],
-          [$rootScope.command.latencyTotal["0"], $rootScope.command.latencyTotal["25"],
-          $rootScope.command.latencyTotal["50"], $rootScope.command.latencyTotal["75"],
-          $rootScope.command.latencyTotal["90"], $rootScope.command.latencyTotal["95"],
-          $rootScope.command.latencyTotal["99"], $rootScope.command.latencyTotal["99.5"],
-          $rootScope.command.latencyTotal["100"]]];
+      $scope.refreshChart = function(command){
+        if(command){
+          $scope.chartData = [[command.latencyExecute["0"], command.latencyExecute["25"],
+            command.latencyExecute["50"], command.latencyExecute["75"],
+            command.latencyExecute["90"], command.latencyExecute["95"],
+            command.latencyExecute["99"], command.latencyExecute["99.5"],
+            command.latencyExecute["100"]],
+            [command.latencyTotal["0"], command.latencyTotal["25"],
+            command.latencyTotal["50"], command.latencyTotal["75"],
+            command.latencyTotal["90"], command.latencyTotal["95"],
+            command.latencyTotal["99"], command.latencyTotal["99.5"],
+            command.latencyTotal["100"]]];
         }
-
       };
+
+      observeOnScope($rootScope, 'command').subscribe(function(change) {
+          console.log(change.newValue.name);
+          $scope.refreshChart(change.newValue);
+      });
 
     $scope.showCommand();
 });
