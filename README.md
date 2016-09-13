@@ -1,7 +1,7 @@
 # hystrix-charts
 An Ionic Mobile Dashboard for Hystrix Streams
 
-#####Project Keywords: `Ionic Framework` `AngularJS` `Hystrix`
+#####Project Keywords: `Ionic Framework` `AngularJS` `Hystrix` `ChartJS`
 
 ## Project Setup
 
@@ -16,3 +16,6 @@ With an Ionic Environment installed, use this commands to run `hystrix-charts`
     ionic serve
   ```
 And voil&#224; `hystrix-charts` now should be running on [http://localhost:8100/](http://localhost:8100/)
+
+| ![](https://raw.githubusercontent.com/lexmartinez/hystrix-charts/master/www/img/screenshot/capture1.png) | ![](https://raw.githubusercontent.com/lexmartinez/hystrix-charts/master/www/img/screenshot/capture2.png) |![](https://raw.githubusercontent.com/lexmartinez/hystrix-charts/master/www/img/screenshot/capture3.png) |
+| ------------- | ------------- | ------------- |
