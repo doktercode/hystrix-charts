@@ -57,7 +57,6 @@ angular.module('hystrix-charts.controllers', [])
      };
 
     $scope.showCommand = function(){
-        console.log("command",$stateParams.commandId);
         $rootScope.command = $rootScope.data[$stateParams.commandId];
         $scope.refreshChart($rootScope.command);
     };
@@ -78,7 +77,6 @@ angular.module('hystrix-charts.controllers', [])
       };
 
       observeOnScope($rootScope, 'command').subscribe(function(change) {
-          console.log(change.newValue.name);
           $scope.refreshChart(change.newValue);
       });
 
