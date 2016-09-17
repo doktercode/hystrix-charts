@@ -5,7 +5,7 @@ An Ionic Mobile Dashboard for Hystrix Streams
 
 ## Project Setup
 
-`hystrix-charts` is a tipical `Ionic` hibrid application we assumed that you're familiarized with this framework, otherwise it is here where you should start [ionic-getting-started](http://ionicframework.com/getting-started/)
+`hystrix-charts` is a typical `Ionic` hybrid application we assumed that you're familiarized with this framework, otherwise it is here where you should start [ionic-getting-started](http://ionicframework.com/getting-started/)
 
 With an Ionic Environment installed, use this commands to run `hystrix-charts`
 
