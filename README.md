@@ -1,7 +1,5 @@
 # hystrix-charts
-An Ionic Mobile Dashboard for Hystrix Streams
-
-#####Project Keywords: `Ionic Framework` `AngularJS` `Hystrix` `ChartJS` `RxJS`
+:chart_with_downwards_trend: An Ionic Mobile Dashboard for Hystrix Streams
 
 ## Project Setup
 
